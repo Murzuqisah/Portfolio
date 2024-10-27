@@ -1,12 +1,25 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
+import path from 'path';
 
 
-app.use(express.json());
+
+const app = express();
 
 // Directory and file paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Middleware to parse JSON and     url-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Routes
+const htmlFiles = ['contact', 'certifications', 'socials', 'blogs'];
+
 
 // server setup
 const PORT = process.env.PORT || 3000;
