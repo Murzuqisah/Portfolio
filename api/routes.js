@@ -38,6 +38,18 @@ htmlFiles.forEach(file => {
     });
 });
 
+// Error handling middleware
+// 404 handler
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
+
+// 500 handler
+app.use((err, req, res, next) => {
+    console.error('Server error:', err.stack);
+    res.status(500).sendFile(path.join(__dirname, 'public', '500.html')); // Serve a 500 error page
+});
+
 // server setup
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
