@@ -1,4 +1,3 @@
-// Time Update
 function updateTime() {
     const now = new Date();
     document.getElementById('current-time').textContent = 
@@ -8,19 +7,20 @@ function updateTime() {
             minute: '2-digit',
             second: '2-digit'
         });
-    document.getElementById('current-year').textContent = now.getFullYear();
 }
 
-// Update time every second
-updateTime();
 setInterval(updateTime, 1000);
+updateTime();
 
-// Scroll handler
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.nav-container');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
+// Add scroll reveal animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach((section) => {
+    observer.observe(section);
 });
