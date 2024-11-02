@@ -419,7 +419,7 @@ section {
 }
 
 .projects-grid {
-  display: grid;
+  display: inline-flex;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
@@ -428,6 +428,7 @@ section {
   background: rgba(31, 41, 55, 0.5);
   border-radius: 0.5rem;
   overflow: hidden;
+  height: auto;
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
