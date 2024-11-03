@@ -1,0 +1,41 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The Making of Joel",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "start": "node index.js",
+    "build": "npm install",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "MurzuqIsah",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.1",
+    "@vercel/analytics": "^1.3.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "8.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "vitest": "^2.1.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Portfolio"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
