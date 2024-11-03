@@ -1,0 +1,19 @@
+{
+    "version": 2,
+  
+    "buildCommand": "npm run build",
+    "installCommand": "npm install",
+    "outputDirectory": "public",
+  
+    "cleanUrls": true,
+  
+    "public": true,
+  
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/index.js"
+      }
+    ]
+  }
+  
