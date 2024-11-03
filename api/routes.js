@@ -1,14 +1,34 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import requiredEnvVars from './config.js';
 
+inject();
+// Initialize environment variables
+dotenv.config();
+
+// Only use dotenv locally, Vercel handles it in production
+if (process.env.API_KEY !== 'production') {
+    dotenv.config();
+}
+
+// Check for required environment variables
+const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
+
+if (missingEnvVars.length > 0) {
+    console.error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
+    process.exit(1);
+}
+
+// Logging middleware
+app.use(morgan('combined'));
 
 
 const app = express();
 
 // Directory and file paths
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = __dirname(__filename);
 
 // Middleware to parse JSON and     url-encoded data
 app.use(express.json());
