@@ -13,6 +13,7 @@
         rel="stylesheet" />
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="./JS/cv-download.js"></script>
+    <script src="./JS/contact-form.js"></script>
     <title>Joel Amos Adero | Software Developer</title>
 </head>
 
@@ -47,6 +48,9 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
+                <div class="profile-image-container">
+                    <img src="./images/IMG_7022.JPG" alt="Joel Amos" class="profile-image">
+                </div>
                 <h1>Joel Amos</h1>
                 <p class="hero-subtitle">Software Developer</p>
                 <div class="hero-buttons">
@@ -64,7 +68,6 @@
                 </button>
             </div>
         </section>
-        <hr style="text-decoration: dashed;">
 
         <section id="about" class="about-section">
             <div class="container">
@@ -145,22 +148,27 @@
         <section id="contact" class="contact-section">
             <div class="contact-container">
                 <h2 class="contact-title">Contact Me</h2>
-                <form class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
                         <div>
-                            <input type="text" placeholder="Name" class="form-input" required>
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name" class="form-input" required>
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" class="form-input" required>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" class="form-input" required>
                         </div>
                         <div>
-                            <textarea placeholder="Message" rows="4" class="form-textarea" required></textarea>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea id="message" name="message" placeholder="Message" rows="4" class="form-textarea"
+                                required></textarea>
                         </div>
                         <button type="submit" class="submit-button transition-all">
                             Send Message
                         </button>
                     </div>
                 </form>
+                <div id="form-status" class="mt-4 text-center hidden"></div>
             </div>
         </section>
         <!-- Footer Section -->
