@@ -9,6 +9,7 @@ import { rateLimiter, corsMiddleware } from './middleware/rateLimiter.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandlers.js';
 import healthRouter from './routes/health.js';
 import pagesRouter from './routes/pages.js';
+import sendEmailRouter from './routes/sendEmail.js';
 
 // Initialize environment and analytics
 initializeEnv();
@@ -30,7 +31,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 
 // Routes
-app.use('/api/health', healthRouter);
+app.use('/routes/health', healthRouter);
+app.use('/routes/send-email', sendEmailRouter);
 app.use('/', pagesRouter);
 
 // Error handling
