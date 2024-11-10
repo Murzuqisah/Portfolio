@@ -47,7 +47,7 @@ body::before {
   display: flex;
   flex-direction: column;
   content: "";
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -83,7 +83,7 @@ body::before {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg var(--accent-emerald), var(--bg-gradient-mid));
+  background: linear-gradient(90deg var(--accent-emerald), var(--glass-bg));
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
@@ -209,24 +209,24 @@ body::before {
   backdrop-filter: blur(10px);
 }
 
-.hero,
 .about-section,
 .experience-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding-top: calc(2rem + 80px);
   position: relative;
   overflow: hidden;
 }
 
 .hero {
   top: 4rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url('../images/IMG_7022.JPG') transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url('../images/kishore-v-tuSz_FGc3zg-unsplash.jpg') no-repeat transparent;
+  backdrop-filter: blur(50px);
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,7 +238,7 @@ body::before {
 
 .hero::before {
   content: "";
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at top right,
@@ -335,6 +335,27 @@ h1 {
   background: var(--glass-bg);
   padding: 8rem 2rem;
   position: relative;
+}
+
+/* CV Download Section */
+
+.cv-download-section {
+  margin-top: 2em;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cv-download-section h2 {
+  margin-bottom: 2rem;
+}
+
+#download-cv-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+#download-cv-btn i {
+  margin-right: 0.5rem;
 }
 
 .container {
