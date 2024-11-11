@@ -10,4 +10,13 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
+const response = await fetch('/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formObject),
+  });
+  
+
 export default router;
