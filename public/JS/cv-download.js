@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
 
         try {
-            const response = await fetch('../public/images/Joel_Adero_CV.pdf');
+            const response = await fetch('./Joel_Adero_CV.pdf');
             if (!response.ok) throw new Error('Failed to fetch CV');
 
             const blob = await response.blob();
