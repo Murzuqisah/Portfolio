@@ -5,7 +5,7 @@ export const initializeEnv = () => {
         dotenv.config();
     }
 
-    const requiredEnvVars = ['API_KEY', 'SECRET_KEY'];
+    const requiredEnvVars = ['API_KEY', 'SECRET_KEY', 'GMAIL_USER', 'GMAIL_PASS'];
     const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
 
     if (missingEnvVars.length > 0) {
