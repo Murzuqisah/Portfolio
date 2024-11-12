@@ -13,8 +13,11 @@ const sendEmail = async (req, res) => {
   }
 
   // Create a transporter using Gmail (or another email service)
-  const transporter = nodemailer.createTransport({
-    service: "Gmail",
+  var transporter = nodemailer.createTransport({
+    secure: false, // TLC & SSL options
+    host: "smtp.gmail.com",
+    service: "gmail",
+    port: 465,
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASS,
@@ -22,15 +25,14 @@ const sendEmail = async (req, res) => {
   });
 
   const mailOptions = {
-    from: process.env.GMAIL_USER,
+    from: process.env.GMAIL_USER, // Send from my email
+    replyTo: `"${name}" <${email}>`,
     to: process.env.GMAIL_USER, // Send to yourself or another email
-    subject: `New contact from ${name}`,
+    subject: `Portfolio Contact: ${name}`,
+    email: email,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `
-      <h3>New Contact Form Submission</h3>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Message:</strong></p>
+      <p><strong>Hello, I am </strong> ${name}.</p>
       <p>${message}</p>
     `,
   };
@@ -44,6 +46,10 @@ const sendEmail = async (req, res) => {
     res.status(500).json({ error: "Error sending email:" + error.message });
   }
 };
+
+function sendMail(name, email, message) {
+  transporter.sendMail(mailOptions);
+}
 
 // POST route to handle contact form submissions
 router.post("/", sendEmail);
