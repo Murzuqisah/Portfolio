@@ -13,10 +13,9 @@ const sendEmail = async (req, res) => {
   }
 
   // Create a transporter using Gmail (or another email service)
-  var transporter = nodemailer.createTransport({
-    secure: false, // TLC & SSL options
+  const transporter = nodemailer.createTransport({
+    secure: true, // TLC & SSL options
     host: "smtp.gmail.com",
-    service: "gmail",
     port: 465,
     auth: {
       user: process.env.GMAIL_USER,
@@ -25,15 +24,23 @@ const sendEmail = async (req, res) => {
   });
 
   const mailOptions = {
-    from: process.env.GMAIL_USER, // Send from my email
-    replyTo: `"${name}" <${email}>`,
-    to: process.env.GMAIL_USER, // Send to yourself or another email
+    from: `"${name}" <${process.env.GMAIL_USER}>`,
+    replyTo: email,
+    to: process.env.GMAIL_USER, // Your Gmail address as recipient
     subject: `Portfolio Contact: ${name}`,
-    email: email,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `
-      <p><strong>Hello, I am </strong> ${name}.</p>
-      <p>${message}</p>
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <h2>New Portfolio Contact Message</h2>
+        <p><strong>From:</strong> ${name} (${email})</p>
+        <p><strong>Message:</strong></p>
+        <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+          ${message}
+        </div>
+        <p style="color: #666; margin-top: 20px; font-size: 12px;">
+          This message was sent via your portfolio contact form.
+        </p>
+      </div>
     `,
   };
 
@@ -46,10 +53,6 @@ const sendEmail = async (req, res) => {
     res.status(500).json({ error: "Error sending email:" + error.message });
   }
 };
-
-function sendMail(name, email, message) {
-  transporter.sendMail(mailOptions);
-}
 
 // POST route to handle contact form submissions
 router.post("/", sendEmail);
