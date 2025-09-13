@@ -17,6 +17,10 @@ const sendEmail = async (req, res) => {
     host: "smtp.gmail.com", // Gmail SMTP host
     port: 587, // Port for TLS/STARTTLS
     secure: false, // Use 'true' for port 465 (SSL), 'false' for port 587 (TLS)
+    requireTLS: true,
+    tls: {
+      minVersion: 'TLSv1.2',
+    },
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASS,
