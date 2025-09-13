@@ -9,10 +9,11 @@
   
     "public": true,
   
-    "rewrites": [
+    "routes": [
       {
-        "source": "/routes/send-email",
-        "destination": "/index.js"
+        "src": "/routes/send-email",
+        "dest": "/index.js",
+        "methods": ["POST"]
       }
     ]
   }
