@@ -11,7 +11,7 @@
   
     "routes": [
       {
-        "src": "/routes/send-email",
+        "src": "^/routes/send-email$",
         "dest": "/index.js",
         "methods": ["POST"]
       }
