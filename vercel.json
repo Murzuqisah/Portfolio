@@ -5,14 +5,15 @@
     "installCommand": "npm install",
     "outputDirectory": "public",
   
-    "cleanUrls": true,
+    
   
     "public": true,
   
-    "rewrites": [
+    "routes": [
       {
-        "source": "/(.*)",
-        "destination": "/index.js"
+        "src": "^/routes/send-email$",
+        "dest": "/index.js",
+        "methods": ["POST"]
       }
     ]
   }
