@@ -1,11 +1,17 @@
 import express from "express";
 import nodemailer from "nodemailer";
+import he from "he";
 
 const router = express.Router();
 
 // Function to handle form submission and send the email
 const sendEmail = async (req, res) => {
   const { name, email, message } = req.body;
+
+  // Escape user input for HTML context
+  const escapedName = he.encode(name);
+  const escapedEmail = he.encode(email);
+  const escapedMessage = he.encode(message);
 
   // Check for missing fields
   if (!name || !email || !message) {
@@ -28,18 +34,18 @@ const sendEmail = async (req, res) => {
   });
 
   const mailOptions = {
-    from: `"${name}" <${process.env.GMAIL_USER}>`,
+    from: `"${escapedName}" <${process.env.GMAIL_USER}>`,
     replyTo: email,
     to: process.env.GMAIL_USER, // Your Gmail address as recipient
-    subject: `Portfolio Contact: ${name}`,
+    subject: `Portfolio Contact: ${escapedName}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px;">
         <h2>New Portfolio Contact Message</h2>
-        <p><strong>From:</strong> ${name} (${email})</p>
+        <p><strong>From:</strong> ${escapedName} (${escapedEmail})</p>
         <p><strong>Message:</strong></p>
         <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
-          ${message}
+          ${escapedMessage}
         </div>
         <p style="color: #666; margin-top: 20px; font-size: 12px;">
           This message was sent via your portfolio contact form.
