@@ -1,20 +1,17 @@
 {
     "version": 2,
-  
-    "buildCommand": "npm run build",
-    "installCommand": "npm install",
-    "outputDirectory": "public",
-  
-    
-  
-    "public": true,
-  
+    "builds": [
+        { "src": "index.js", "use": "@vercel/node" }
+    ],
     "routes": [
       {
         "src": "^/routes/send-email$",
         "dest": "/index.js",
         "methods": ["POST"]
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
       }
     ]
-  }
-  
+}
