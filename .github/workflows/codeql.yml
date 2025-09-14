@@ -1,54 +1,128 @@
-name: "CodeQL Advanced"
+name: "CodeQL Advanced Scan"
 
 on:
   push:
-    branches: [ "versions", "main" ]
+    branches: [ "versions" ]
   pull_request:
-    branches: [ "versions", "main" ]
+    branches: [ "versions" ]
   schedule:
-    - cron: '31 8 * * 2'
+    - cron: '31 8 * * 2' # every Tuesday at 08:31 UTC
 
 jobs:
   analyze:
-    name: Analyze (${{ matrix.language }})
-    runs-on: ubuntu-22.04
+    name: CodeQL Analyze (${{ matrix.language }})
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+
     permissions:
       security-events: write
       packages: read
       actions: read
       contents: read
+      pull-requests: write
+      checks: write
 
     strategy:
       fail-fast: false
       matrix:
         include:
-        - language: javascript-typescript
-          build-mode: none
-        - language: go
-          build-mode: none
+          - language: javascript-typescript
+            build-mode: none
+          - language: go
+            build-mode: autobuild
+          - language: python
+            build-mode: autobuild
+          - language: c-cpp
+            build-mode: autobuild
+          - language: ruby
+            build-mode: autobuild
+          - language: java-kotlin
+            build-mode: autobuild
+          - language: rust
+            build-mode: autobuild
+          - language: swift
+            build-mode: autobuild
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: ${{ matrix.language }}
-        build-mode: ${{ matrix.build-mode }}
-        queries: security-extended,security-and-quality
+      # Node.js setup for JS/TS
+      - name: Setup Node.js
+        if: matrix.language == 'javascript-typescript'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-    - if: matrix.build-mode == 'manual'
-      shell: bash
-      run: |
-        echo 'If you are using a "manual" build mode for one or more of the' \
-          'languages you are analyzing, replace this with the commands to build' \
-          'your code, for example:'
-        echo '  make bootstrap'
-        echo '  make release'
-        exit 1
+      - name: Install dependencies
+        if: matrix.language == 'javascript-typescript'
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f yarn.lock ]; then
+            yarn install --frozen-lockfile
+          else
+            npm install
+          fi
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{matrix.language}}"
+      # Python setup
+      - name: Setup Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Go setup
+      - name: Setup Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21.x'
+
+      # Rust setup
+      - name: Setup Rust
+        if: matrix.language == 'rust'
+        uses: dtolnay/rust-toolchain@stable
+
+      # Java setup
+      - name: Setup Java
+        if: matrix.language == 'java-kotlin'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Initialize CodeQL
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+          queries: +security-extended,+security-and-quality
+
+      # Manual build fallback
+      - if: matrix.build-mode == 'manual'
+        shell: bash
+        run: |
+          echo 'Manual build required for ${{ matrix.language }}. Add your build commands here.'
+          exit 1
+
+      # Run the analysis
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          output: sarif-results
+          upload: true
+          wait-for-results: true
+
+      # Slack/Discord Notification on Failure
+      - name: Send Notification
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data "{
+            \"username\": \"CodeQL Bot\",
+            \"content\": \"🚨 CodeQL scan failed for *${{ matrix.language }}* in repo *${{ github.repository }}* on branch *${{ github.ref }}*.\nCheck the alerts here: ${{ github.server_url }}/${{ github.repository }}/security/code-scanning \"
+          }" \
+          ${{ secrets.NOTIFY_WEBHOOK_URL }}
