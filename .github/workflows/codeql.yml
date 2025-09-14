@@ -2,16 +2,16 @@ name: "CodeQL Advanced Scan"
 
 on:
   push:
-    branches: [ "versions" ]
+    branches: [ "versions", "main" ]
   pull_request:
-    branches: [ "versions" ]
+    branches: [ "versions", "main" ]
   schedule:
     - cron: '31 8 * * 2' # every Tuesday at 08:31 UTC
 
 jobs:
   analyze:
     name: CodeQL Analyze (${{ matrix.language }})
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-22.04' }}
 
     permissions:
       security-events: write
