@@ -6,31 +6,17 @@ const router = express.Router();
 
 // Function to handle form submission and send the email
 const sendEmail = async (req, res) => {
-  const { name: rawName, email: rawEmail, message: rawMessage } = req.body;
+  const { name, email, message } = req.body;
 
-  // Trim and validate inputs
-  const name = rawName ? rawName.trim() : "";
-  const email = rawEmail ? rawEmail.trim() : "";
-  const message = rawMessage ? rawMessage.trim() : "";
+  // Escape user input for HTML context
+  const escapedName = he.encode(name);
+  const escapedEmail = he.encode(email);
+  const escapedMessage = he.encode(message);
 
+  // Check for missing fields
   if (!name || !email || !message) {
     return res.status(400).json({ error: "Missing required fields" });
   }
-
-  // Basic email format validation
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ error: "Invalid email format" });
-  }
-
-  // Prevent header injection
-  if (/[\\r\\n]/.test(name) || /[\\r\\n]/.test(email) || /[\\r\\n]/.test(message)) {
-    return res.status(400).json({ error: "Invalid characters in input" });
-  }
-
-  // Escape HTML entities
-  const escapedName = he.escape(name);
-  const escapedEmail = he.escape(email);
-  const escapedMessage = he.escape(message);
 
   // Create a transporter using Gmail (or another email service)
   const transporter = nodemailer.createTransport({
@@ -49,16 +35,16 @@ const sendEmail = async (req, res) => {
 
   const mailOptions = {
     from: `"${escapedName}" <${process.env.GMAIL_USER}>`,
-    replyTo: escapedEmail,
+    replyTo: email,
     to: process.env.GMAIL_USER, // Your Gmail address as recipient
     subject: `Portfolio Contact: ${escapedName}`,
-    text: `Name: ${escapedName}\nEmail: ${escapedEmail}\nMessage: ${escapedMessage}`,
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px;">
         <h2>New Portfolio Contact Message</h2>
         <p><strong>From:</strong> ${escapedName} (${escapedEmail})</p>
         <p><strong>Message:</strong></p>
-        <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px; white-space: pre-wrap;">
+        <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
           ${escapedMessage}
         </div>
         <p style="color: #666; margin-top: 20px; font-size: 12px;">
