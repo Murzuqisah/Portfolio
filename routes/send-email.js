@@ -58,7 +58,7 @@ const sendEmail = async (req, res) => {
         <h2>New Portfolio Contact Message</h2>
         <p><strong>From:</strong> ${escapedName} (${escapedEmail})</p>
         <p><strong>Message:</strong></p>
-        <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+        <div style="padding: 15px; background-color: #f5f5f5; border-radius: 5px; white-space: pre-wrap;">
           ${escapedMessage}
         </div>
         <p style="color: #666; margin-top: 20px; font-size: 12px;">
