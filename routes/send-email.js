@@ -18,7 +18,7 @@ const sendEmail = async (req, res) => {
   }
 
   // Basic email format validation
-  if (!/^[^\\ s@]+@[^\\ s@]+\.[^\\ s@]+$/.test(email)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: "Invalid email format" });
   }
 
