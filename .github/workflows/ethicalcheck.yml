@@ -28,60 +28,62 @@ name: EthicalCheck Security Scan
 
 on:
   push:
-    branches: [ "versions" ]
+    branches: ["versions"]
   pull_request:
-    branches: [ "versions" ]
+    branches: ["versions"]
   schedule:
-    - cron: "22 16 * * 6"  # Weekly security scan
+    - cron: "22 16 * * 6" # weekly scan
   workflow_dispatch:
     inputs:
       oas_url:
-        description: "OpenAPI / Swagger / Postman collection URL"
+        description: "OpenAPI/Swagger/Postman collection URL"
+        required: true
         default: "http://netbanking.apisec.ai:8080/v2/api-docs"
-        required: true
       email:
-        description: "Email to receive EthicalCheck report"
-        default: "xxx@apisec.ai"
+        description: "Email to receive EthicalCheck security report"
         required: true
+        default: "xxx@apisec.ai"
 
 permissions:
   contents: read
 
 concurrency:
-  group: ethicalcheck-scan
+  group: ethicalcheck-security-scan
   cancel-in-progress: true
 
 jobs:
-  run-ethicalcheck:
-    name: Run EthicalCheck API Security Tests
+  ethicalcheck:
+    name: Run EthicalCheck API Security Scan
+    runs-on: ubuntu-latest
+
     permissions:
       security-events: write
       actions: read
 
-    runs-on: ubuntu-latest
     timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run EthicalCheck Security Scan
-        id: scan
-        uses: apisec-inc/ethicalcheck-action@005fac321dd843682b1af6b72f30caaf9952c641
+      - name: Run EthicalCheck Scan
+        id: run_scan
+        uses: ethicalcheck/github-action@v1
         with:
           oas-url: ${{ github.event.inputs.oas_url || 'http://netbanking.apisec.ai:8080/v2/api-docs' }}
           email: ${{ github.event.inputs.email || 'xxx@apisec.ai' }}
           sarif-result-file: ethicalcheck-results.sarif
 
-      - name: Upload SARIF to GitHub Security
+      - name: Upload SARIF to GitHub Security Dashboard
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ethicalcheck-results.sarif
 
-      - name: Save SARIF as Artifact
+      - name: Save SARIF as workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: ethicalcheck-sarif-report
           path: ethicalcheck-results.sarif
+
 
 
