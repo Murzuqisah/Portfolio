@@ -24,46 +24,64 @@
 # Vulnerabilities are fully triaged, it contains CVSS score, severity, endpoint information, and OWASP tagging.
 
 
-# This is a starter workflow to help you get started with EthicalCheck Actions
+name: EthicalCheck Security Scan
 
-name: EthicalCheck-Workflow
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "versions" branch
-  # Customize trigger events based on your DevSecOps processes.
   push:
     branches: [ "versions" ]
   pull_request:
     branches: [ "versions" ]
   schedule:
-    - cron: '22 16 * * 6'
-
-  # Allows you to run this workflow manually from the Actions tab
+    - cron: "22 16 * * 6"  # Weekly security scan
   workflow_dispatch:
+    inputs:
+      oas_url:
+        description: "OpenAPI / Swagger / Postman collection URL"
+        default: "http://netbanking.apisec.ai:8080/v2/api-docs"
+        required: true
+      email:
+        description: "Email to receive EthicalCheck report"
+        default: "xxx@apisec.ai"
+        required: true
 
 permissions:
   contents: read
 
+concurrency:
+  group: ethicalcheck-scan
+  cancel-in-progress: true
+
 jobs:
-  Trigger_EthicalCheck:
+  run-ethicalcheck:
+    name: Run EthicalCheck API Security Tests
     permissions:
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      security-events: write
+      actions: read
+
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-       - name: EthicalCheck  Free & Automated API Security Testing Service
-         uses: apisec-inc/ethicalcheck-action@005fac321dd843682b1af6b72f30caaf9952c641
-         with:
-          # The OpenAPI Specification URL or Swagger Path or Public Postman collection URL.
-          oas-url: "http://netbanking.apisec.ai:8080/v2/api-docs"
-          # The email address to which the penetration test report will be sent.
-          email: "xxx@apisec.ai"
-          sarif-result-file: "ethicalcheck-results.sarif"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-       - name: Upload sarif file to repository
-         uses: github/codeql-action/upload-sarif@v3
-         with:
-          sarif_file: ./ethicalcheck-results.sarif
+      - name: Run EthicalCheck Security Scan
+        id: scan
+        uses: apisec-inc/ethicalcheck-action@005fac321dd843682b1af6b72f30caaf9952c641
+        with:
+          oas-url: ${{ github.event.inputs.oas_url || 'http://netbanking.apisec.ai:8080/v2/api-docs' }}
+          email: ${{ github.event.inputs.email || 'xxx@apisec.ai' }}
+          sarif-result-file: ethicalcheck-results.sarif
+
+      - name: Upload SARIF to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ethicalcheck-results.sarif
+
+      - name: Save SARIF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ethicalcheck-sarif-report
+          path: ethicalcheck-results.sarif
+
 
