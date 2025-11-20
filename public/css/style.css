@@ -121,11 +121,12 @@
 
 .profile-image-container {
     flex-shrink: 0;
+    margin-right: 2rem;
 }
 
 .profile-image {
-    width: 200px; /* Increased size */
-    height: 200px; /* Increased size */
+    width: 300px; /* Increased size */
+    height: 300px; /* Increased size */
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
