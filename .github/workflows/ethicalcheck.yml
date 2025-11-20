@@ -23,8 +23,7 @@
 # EthicalCheck generates security test report that includes all the tested endpoints, coverage graph, exceptions, and vulnerabilities.
 # Vulnerabilities are fully triaged, it contains CVSS score, severity, endpoint information, and OWASP tagging.
 
-
-name: EthicalCheck Security Scan
+name: API Security Scan
 
 on:
   push:
@@ -32,58 +31,44 @@ on:
   pull_request:
     branches: ["versions"]
   schedule:
-    - cron: "22 16 * * 6" # weekly scan
+    - cron: "22 16 * * 6"
   workflow_dispatch:
     inputs:
-      oas_url:
-        description: "OpenAPI/Swagger/Postman collection URL"
+      oas_path:
+        description: "Path (or URL) to your OpenAPI spec"
         required: true
         default: "http://netbanking.apisec.ai:8080/v2/api-docs"
-      email:
-        description: "Email to receive EthicalCheck security report"
-        required: true
-        default: "xxx@apisec.ai"
 
 permissions:
   contents: read
 
-concurrency:
-  group: ethicalcheck-security-scan
-  cancel-in-progress: true
-
 jobs:
-  ethicalcheck:
-    name: Run EthicalCheck API Security Scan
+  api-security-audit:
     runs-on: ubuntu-latest
-
     permissions:
       security-events: write
       actions: read
 
-    timeout-minutes: 15
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run EthicalCheck Scan
-        id: run_scan
-        uses: ethicalcheck/github-action@v1
+      - name: Run 42Crunch API Security Audit
+        uses: 42Crunch/api-security-audit-action@v4
         with:
-          oas-url: ${{ github.event.inputs.oas_url || 'http://netbanking.apisec.ai:8080/v2/api-docs' }}
-          email: ${{ github.event.inputs.email || 'xxx@apisec.ai' }}
-          sarif-result-file: ethicalcheck-results.sarif
+          api-token: ${{ secrets.CRONCH_API_TOKEN }}   # You'll need to store your 42Crunch API token in secrets
+          default-collection-name: GitHub-${{ github.repository }}-${{ github.ref_name }}
+          log-level: info
+          json-report: "42crunch-audit-${{ github.run_id }}.json"
+          sarif-report: "42crunch-audit-${{ github.run_id }}.sarif"
 
-      - name: Upload SARIF to GitHub Security Dashboard
+      - name: Upload SARIF to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: ethicalcheck-results.sarif
+          sarif_file: "42crunch-audit-${{ github.run_id }}.sarif"
 
-      - name: Save SARIF as workflow artifact
+      - name: Upload audit JSON as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ethicalcheck-sarif-report
-          path: ethicalcheck-results.sarif
-
-
-
+          name: "42crunch-json-report"
+          path: "42crunch-audit-${{ github.run_id }}.json"
