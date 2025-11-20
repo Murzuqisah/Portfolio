@@ -1,239 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/global.css" type="text/css" />
-    <link rel="stylesheet" href="./css/mobile-style.css" type="text/css" />
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-        rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/b2aa6d0202.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <script src="./JS/cv-download.js"></script>
-    <script src="./JS/contact-form.js"></script>
-    <title>Joel Amos Adero | Software Developer</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./css/global.css" type="text/css" />
+        <link rel="stylesheet" href="./css/mobile-style.css" type="text/css" />
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+            rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/b2aa6d0202.js"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" type='text/css'
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <script src="./JS/cv-download.js"></script>
+        <script src="./JS/contact-form.js"></script>
+        <title>Joel Amos Adero | Software Developer</title>
+    </head>
 
-<body>
-    <nav class="nav-container">
-        <div class="nav-content">
-            <div class="navbar-left">
-                <div class="location-indicator">
-                    <span>Kisumu | Kenya </span>
-                    <div class="status-dot"></div>
+    <body>
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="navbar-left">
+                    <div class="location-indicator">
+                        <span>Kisumu | Kenya </span>
+                        <div class="status-dot"></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://dev.to/joel_amos" class="nav-link">Blog</a>
-                <div class="time-display">
-                    <span id="current-time">20:26:43</span>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="https://dev.to/joel_amos" class="nav-link">Blog</a>
+                    <div class="time-display">
+                        <span id="current-time">20:26:43</span>
+                    </div>
                 </div>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="profile-image-container">
-                    <img src="./images/IMG_7022.JPG" alt="Joel Amos" class="profile-image">
-                </div>
-                <h1>Joel Amos</h1>
-                <p class="hero-subtitle">Software Developer</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View My Work</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="cv-download" class="cv-download-section">
-            <div class="container">
-                <h2 style="color: white;">Download My CV</h2>
-                <button id="download-cv-btn" class="btn btn-primary">
-                    Download CV
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
-        </section>
+        </nav>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    Joel Amos is a software developer with a passion for creating
-                    user-friendly applications. He has a keen eye for detail and a
-                    strong understanding of web development technologies. He is
-                    currently working remotely, focusing on his passion and contributing
-                    to the development community.
-                </p>
-                <br><br>
-                <h2>Tech Stack</h2>
-                <ul class="skills-list">
-                    <li>
-                        <a href="https://devdocs.io/javascript/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.docker.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://go.dev/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" />            
-                    </li>
-                    <li>
-                        <a href="https://nodejs.org/en"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />            
-                    </li>
-                    <li><a href="https://www.php.net/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
-                      </li>
-                    <li>
-                        <a href="https://web.dev/learn/css"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://git-scm.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />            
-                    </li>
-                    <li>
-                        <a href="https://mariadb.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <a href="https://expressjs.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />            
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience-section">
-            <div class="section-container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/wu-yi-3lJMJ3g37IE-unsplash.jpg" alt="Library Management System"
-                            class="project-image">
-                        <div class="project-content">
-                            <h3 class="project-title">Library Management System</h3>
-                            <p class="project-description">A Library Management System written in PHP</p>
-                            <a href="https://github.com/Murzuqisah/Library-Management-System.git"
-                                class="project-link">View Project →</a>
-                        </div>
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <div class="profile-image-container">
+                        <img src="./images/IMG_7022.JPG" alt="Joel Amos"
+                            class="profile-image">
                     </div>
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/display1.png" alt="Groupie Tracker" class="project-image">
-                        <div class="project-content">
-                            <h3 class="project-title">Groupie Tracker | Music</h3>
-                            <p class="project-description">Music | Groupie Tracker</p>
-                            <a href="https://github.com/Murzuqisah/music-stats.git" class="project-link">View Project
-                                →</a>
-                        </div>
-                    </div>
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/Mwalimu_Connect_Homepage.png" alt="Library Management System"
-                            class="project-image">
-                        <div class="project-content">
-                            <h3 class="project-title">Mwalimu Connect</h3>
-                            <p class="project-description">A Blockchain Tutoring Hub written in Go</p>
-                            <a href="https://github.com/Murzuqisah/MwalimuConnect.git" class="project-link">View Project
-                                →</a>
-                        </div>
-                    </div>
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/Kisumu_In_Action.png" alt="Art Gallery" class="project-image">
-                        <div class="project-content">
-                            <h3 class="project-title">Kisumu | An Interpreted Language</h3>
-                            <p class="project-description">An interpreter based off Go Language</p>
-                            <a href="https://github.com/Murzuqisah/Kisumu.git" class="project-link">View Project →</a>
+                    <div class="hero-text">
+                        <h1>Joel Amos</h1>
+                        <p class="hero-subtitle">Software Developer</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">Get in
+                                Touch</a>
+                            <a href="#experience" class="btn btn-secondary">View My
+                                Work</a>
                         </div>
                     </div>
                 </div>
-                <div class="github-link-container">
-                    <a href="https://github.com/Murzuqisah?tab=repositories" class="github-link transition-all">
-                        View More on GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="contact-container">
-                <h2 class="contact-title">Contact Me</h2>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <div>
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Name" class="form-input" required>
+            <section id="cv-download" class="cv-download-section">
+                <div class="container">
+                    <h2 style="color: white;">Download My CV</h2>
+                    <button id="download-cv-btn" class="btn btn-primary">
+                        Download CV
+                    </button>
+                </div>
+            </section>
+
+            <section id="about" class="about-section">
+                <div class="container">
+                    <h2>About Me</h2>
+                    <p>
+                        Joel Amos is a software developer with a passion for
+                        creating
+                        user-friendly applications. He has a keen eye for detail
+                        and a
+                        strong understanding of web development technologies. He
+                        is
+                        currently working remotely, focusing on his passion and
+                        contributing
+                        to the development community.
+                    </p>
+                    <br><br>
+                    <h2>Tech Stack</h2>
+                    <ul class="skills-list">
+                        <li>
+                            <a href="https://devdocs.io/javascript/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.docker.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://go.dev/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://nodejs.org/en"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+                        </li>
+                        <li><a href="https://www.php.net/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://web.dev/learn/css"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://git-scm.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://mariadb.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg" />
+                        </li>
+                        <li>
+                            <a href="https://expressjs.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+                        </li>
+                        <li>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTML"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.rust-lang.org/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.mysql.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.typescriptlang.org/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.reactjs.org/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.nextjs.org/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.tailwindcss.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.laravel.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.django.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.mongodb.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.linux.org/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.jquery.com"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.docker.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.gitlab.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.supabase.com/"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.vercel.com" class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.postgresql.org/"
+                                class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.postman.com" class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.figma.com" class="href"></a>
+
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+
+                        </li>
+                        <li>
+                            <a href="https://www.canva.com" class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-plain.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.sqlite.com" class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+                        </li>
+                        <li>
+                            <a href="https://www.mysql.com" class="href"></a>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience-section">
+                <div class="section-container">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-card animate-fade-in">
+                            <img src="./images/passa.png"
+                                alt="Passa - Secure Event Management System"
+                                class="project-image"
+                                href="https://passafrika.xyz">
+                            <div class="project-content">
+                                <h3 class="project-title">Passa</h3>
+                                <p class="project-description">A Secure Event
+                                    Management System</p>
+                                <a href="https://github.com/Passa-Inc/passa.git"
+                                    class="project-link">View Project →</a>
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email" class="form-input" required>
+                        <div class="project-card animate-fade-in">
+                            <img src="./images/passapay.png" alt="PassaPay"
+                                class="project-image"
+                                href="https://testpassa-nu.vercel.app">
+                            <div class="project-content">
+                                <h3 class="project-title">PassaPay</h3>
+                                <p class="project-description">An artist payment
+                                    platform powered by Polkadot</p>
+                                <a
+                                    href="https://github.com/Passa-Inc/passapay.git"
+                                    class="project-link">View Project
+                                    →</a>
+                            </div>
                         </div>
-                        <div>
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea id="message" name="message" placeholder="Message" rows="4" class="form-textarea"
-                                required></textarea>
+                        <div class="project-card animate-fade-in">
+                            <img src="./images/sippar.png" alt="Sippar"
+                                class="project-image"
+                                href="https://getsippar.com">
+                            <div class="project-content">
+                                <h3 class="project-title">Sippar</h3>
+                                <p class="project-description">An ERP management
+                                    platform</p>
+                                <a
+                                    href="https://github.com/Flying-Tea-Squad/sippar.git"
+                                    class="project-link">View Project
+                                    →</a>
+                            </div>
                         </div>
-                        <button type="submit" method="post" class="submit-button transition-all">
-                            Send Message
-                        </button>
+                        <div class="project-card animate-fade-in">
+                            <img src="./images/Mwalimu_Connect_Homepage.png"
+                                alt="Peer connect educational platform"
+                                href="https://mwalimu-connect.vercel.app/"
+                                class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Mwalimu Connect</h3>
+                                <p class="project-description">A Blockchain
+                                    Tutoring Hub written in Go</p>
+                                <a
+                                    href="https://github.com/Murzuqisah/MwalimuConnect.git"
+                                    class="project-link">View Project
+                                    →</a>
+                            </div>
+                        </div>
+                        <div class="project-card animate-fade-in">
+                            <img src="./images/Kisumu_In_Action.png"
+                                alt="Art Gallery" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">Kisumu | An
+                                    Interpreted Language</h3>
+                                <p class="project-description">An interpreter
+                                    based off Go Language</p>
+                                <a
+                                    href="https://github.com/Murzuqisah/Kisumu.git"
+                                    class="project-link">View Project →</a>
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <div id="form-status" class="mt-4 text-center hidden"></div>
-            </div>
-        </section>
-        <!-- Footer Section -->
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="copyright">
-                    Joel Amos © <span id="current-year"></span>
+                    <div class="github-link-container">
+                        <a href="https://github.com/Murzuqisah?tab=repositories"
+                            class="github-link transition-all">
+                            View More on GitHub
+                        </a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/Murzuqisah" class="social-link" aria-label="GitHub">
-                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/joel-amos" class="social-link" aria-label="LinkedIn">
-                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                    </a>
-                    <a href="https://sessionize.com/joel-amos-adero" class="social-link" aria-label="Sessionize">
-                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </footer>
-        <script type="module" src="./JS/script.js"></script>
-        <script type="module" src="./JS/index-time.js"></script>
-</body>
+            </section>
 
-</html>
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="contact-container">
+                    <h2 class="contact-title">Contact Me</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <div>
+                                <label for="name" class="sr-only">Name</label>
+                                <input type="text" id="name" name="name"
+                                    placeholder="Name" class="form-input"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" name="email"
+                                    placeholder="Email" class="form-input"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="message"
+                                    class="sr-only">Message</label>
+                                <textarea id="message" name="message"
+                                    placeholder="Message" rows="4"
+                                    class="form-textarea"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" method="post"
+                                class="submit-button transition-all">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status" class="mt-4 text-center hidden"></div>
+                </div>
+            </section>
+            <!-- Footer Section -->
+            <footer class="site-footer">
+                <div class="footer-container">
+                    <div class="copyright">
+                        Joel Amos © <span id="current-year"></span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Murzuqisah"
+                            class="social-link" aria-label="GitHub">
+                            <svg class="social-icon" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joel-amos"
+                            class="social-link" aria-label="LinkedIn">
+                            <svg class="social-icon" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://sessionize.com/joel-amos-adero"
+                            class="social-link" aria-label="Sessionize">
+                            <svg class="social-icon" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+            <script type="module" src="./JS/script.js"></script>
+            <script type="module" src="./JS/index-time.js"></script>
+        </body>
+
+    </html>
