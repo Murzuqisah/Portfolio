@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import { fileURLToPath } from 'url';
 import { inject } from "@vercel/analytics";
 import { initializeEnv } from './config/env.js';
-import { helmetConfig} from './middleware/security.js';
+import { helmetConfig, pathTraversalProtection } from './middleware/security.js';
 import { rateLimiter, corsMiddleware } from './middleware/rateLimiter.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandlers.js';
 import healthRouter from './routes/health.js';
@@ -21,6 +21,7 @@ const __dirname = path.dirname(__filename);
 
 // Middleware setup
 app.use(morgan('combined'));
+app.use(pathTraversalProtection);
 app.use(helmetConfig);
 app.use(rateLimiter);
 app.use(corsMiddleware);

@@ -1,4 +1,14 @@
 import helmet from 'helmet';
+import path from 'path';
+
+// Path traversal protection middleware
+export const pathTraversalProtection = (req, res, next) => {
+    const normalizedPath = path.normalize(req.path);
+    if (normalizedPath.includes('..') || normalizedPath.includes('\\')) {
+        return res.status(403).json({ error: 'Path traversal attempt blocked' });
+    }
+    next();
+};
 
 export const helmetConfig = helmet({
     contentSecurityPolicy: {
