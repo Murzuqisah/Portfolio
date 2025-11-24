@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
-            a.download = 'Joel_Amos_CV.pdf';
+            a.download = '/pdf/Joel_Amos_CV.pdf';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
