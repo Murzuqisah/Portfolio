@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Build the safe file path
-    const pdfPath = `/public/pdf/${requestedFile}`;
+    const pdfPath = `./pdf/${requestedFile}`;
 
     // Render inside iframe
     const iframe = document.createElement("iframe");
