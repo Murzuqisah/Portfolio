@@ -182,15 +182,17 @@
 .hero-content {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2rem;
 }
 
 .carousel-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 20%;
+    min-width: 200px;
+    aspect-ratio: 1;
     flex-shrink: 0;
 }
 
@@ -246,22 +248,45 @@
 }
 
 .hero-text {
-    flex: 1;
+    flex: 4;
     text-align: left;
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .carousel-container {
+        width: 25%;
+        min-width: 180px;
+    }
 }
 
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
+        padding: 2rem 1rem;
     }
     
     .carousel-container {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        min-width: 200px;
     }
     
     .hero-text {
         text-align: center;
+        width: 100%;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
     }
 }

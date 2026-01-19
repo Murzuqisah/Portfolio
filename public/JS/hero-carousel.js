@@ -21,8 +21,8 @@ function prevSlide() {
 document.querySelector('.carousel-btn.next')?.addEventListener('click', nextSlide);
 document.querySelector('.carousel-btn.prev')?.addEventListener('click', prevSlide);
 
-// Auto-advance carousel
-setInterval(nextSlide, 5000);
+// Auto-advance carousel every 10 seconds
+setInterval(nextSlide, 10000);
 
 // Fetch GitHub README
 async function fetchGitHubReadme() {
