@@ -150,3 +150,16 @@
 .hero-text {
     text-align: left;
 }
+
+/* GitHub Projects Metadata */
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.project-language,
+.project-stars {
+    color: #666;
+}
