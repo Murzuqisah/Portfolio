@@ -12,3 +12,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+// Make project cards clickable
+document.querySelectorAll('.project-card[href]').forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(e) {
+    if (!e.target.closest('a')) {
+      window.open(this.getAttribute('href'), '_blank');
+    }
+  });
+});
