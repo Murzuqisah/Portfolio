@@ -55,18 +55,31 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="profile-image-container">
-                    <img src="./images/IMG_7022.JPG" alt="Joel Amos" class="profile-image">
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="./images/IMG_7022.JPG" alt="Joel Amos" class="carousel-image active">
+                        <img src="./images/Adero_001.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_002.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_003.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_004.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_005.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_006.JPG" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_007.JPG" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_008.JPG" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_009.jpg" alt="Joel Amos" class="carousel-image">
+                        <img src="./images/Adero_010.JPG" alt="Joel Amos" class="carousel-image">
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-btn next" aria-label="Next image">&gt;</button>
                 </div>
                 <div class="hero-text">
-                    <h1>Joel Amos</h1>
-                    <p class="hero-subtitle">Software Developer</p>
+                    <div id="github-readme-content">
+                        <h1>Joel Amos</h1>
+                        <p class="hero-subtitle">Software Developer</p>
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in
-                            Touch</a>
-                        <a href="#experience" class="btn btn-secondary">View
-                            My
-                            Work</a>
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#experience" class="btn btn-secondary">View My Work</a>
                     </div>
                 </div>
             </div>
@@ -315,7 +328,7 @@
                             <h3 class="project-title">Arnova</h3>
                             <p class="project-description">AI-powered platform</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/Murzuqisah/Arnova" class="btn btn-secondary" target="_blank">View Project</a>
+                                <a href="https://github.com/shopify-kenya/Arnova.git" class="btn btn-secondary" target="_blank">View Project</a>
                                 <a href="https://arnova.vercel.app" class="btn btn-primary" target="_blank">View Live</a>
                             </div>
                         </div>
@@ -389,6 +402,7 @@
         <script type="module" src="./JS/index-time.js"></script>
         <script type="module" src="./JS/theme-toggle.js"></script>
         <script src="./JS/github-projects.js"></script>
+        <script src="./JS/hero-carousel.js"></script>
 </body>
 
 </html>
