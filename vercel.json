@@ -1,8 +1,5 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "index.js", "use": "@vercel/node" }
-    ],
     "routes": [
       {
         "src": "^/routes/send-email$",
@@ -14,11 +11,6 @@
         "dest": "/index.js"
       }
     ],
-    "functions": {
-        "index.js": {
-            "includeFiles": "public/**"
-        }
-    },
     "github": {
         "silent": true
     }

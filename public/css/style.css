@@ -9,7 +9,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --form-bg: rgba(15, 23, 42, 0.8);
   }
-  
+
   /* Light mode variables */
   :root[data-theme="light"] {
     --bg-gradient-start: #f8fafc;
@@ -21,7 +21,7 @@
     --glass-border: rgba(15, 23, 42, 0.1);
     --form-bg: rgba(255, 255, 255, 0.8);
   }
-  
+
   /* Theme toggle styles */
   .theme-toggle {
     background: var(--glass-bg);
@@ -37,11 +37,11 @@
     justify-content: center;
     transition: all 0.3s ease;
   }
-  
+
   .theme-toggle:hover {
     background: var(--glass-border);
   }
-  
+
   /* Modified navbar styles */
   @media (max-width: 768px) {
     .nav-links {
@@ -56,11 +56,11 @@
       align-items: flex-start;
       gap: 1rem;
     }
-  
+
     .nav-links.active {
       display: flex;
     }
-  
+
     .menu-toggle {
       display: block;
       background: none;
@@ -70,13 +70,13 @@
       padding: 0.5rem;
     }
   }
-  
+
   @media (min-width: 769px) {
     .menu-toggle {
       display: none;
     }
   }
-  
+
   /* Form styles */
   #contact .container {
     background: var(--form-bg);
@@ -87,7 +87,7 @@
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   input,
   textarea {
     background: var(--glass-bg);
@@ -99,7 +99,7 @@
     border-radius: 0.5rem;
     transition: all 0.3s ease;
   }
-  
+
   input:focus,
   textarea:focus {
     outline: none;
@@ -162,4 +162,125 @@
 .project-language,
 .project-stars {
     color: #666;
+}
+
+/* Project Buttons */
+.project-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.project-buttons .btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Hero Carousel */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2rem;
+}
+
+.carousel-container {
+    left: 3px;
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.carousel-images {
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.5rem;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+.carousel-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.hero-text {
+    flex: 4;
+    text-align: left;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .carousel-container {
+        max-width: 200px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-text {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Section scroll indicators */
+.scroll-indicator {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-dot:hover {
+    background: var(--accent-green);
+    transform: scale(1.2);
+}
+
+.scroll-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+@media (max-width: 768px) {
+    .scroll-indicator {
+        right: 1rem;
+    }
 }
