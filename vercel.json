@@ -1,26 +1,9 @@
 {
     "version": 2,
     "builds": [
-        { "src": "index.js", "use": "@vercel/node" },
-        { "src": "public/**", "use": "@vercel/static" }
+        { "src": "index.js", "use": "@vercel/node" }
     ],
     "routes": [
-      {
-        "src": "^/css/(.*)",
-        "dest": "/public/css/$1"
-      },
-      {
-        "src": "^/JS/(.*)",
-        "dest": "/public/JS/$1"
-      },
-      {
-        "src": "^/images/(.*)",
-        "dest": "/public/images/$1"
-      },
-      {
-        "src": "^/Joel_Adero_CV.pdf$",
-        "dest": "/public/Joel_Adero_CV.pdf"
-      },
       {
         "src": "^/routes/send-email$",
         "dest": "/index.js",
