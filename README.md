@@ -1,16 +1,16 @@
-# 💼 Portfolio
+# Portfolio
 
 This is a personal web portfolio that showcases my background, projects, resume, and contact information. Built with Node.js, HTML/CSS, and JavaScript with custom middleware and Vercel deployment.
 
 ---
 
-## 🌍 Live Demo
+## Live Demo
 
-[Joel Adero](https://https://joel-portfolio-joel-amos.vercel.app/)
+[Joel Adero](https://https://joel-amos.vercel.app/)
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 .
@@ -50,18 +50,18 @@ This is a personal web portfolio that showcases my background, projects, resume,
 
 ---
 
-## 🎯 Features
+## Features
 
-- 📃 Downloadable PDF Resume
-- 🌐 Responsive layout with mobile styles
-- 📫 Contact form functionality
-- ⚠️ Custom 404 and 500 error pages
-- 🛡️ Middleware for auth, rate limiting & security
-- 🚀 Deployed on Vercel
+- Downloadable PDF Resume
+- Responsive layout with mobile styles
+- Contact form functionality
+- Custom 404 and 500 error pages
+- Middleware for auth, rate limiting & security
+- Deployed on Vercel
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -86,20 +86,20 @@ The site should be available at `http://localhost:3000`.
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 Create a `.env` file or update `config/env.js` with necessary configuration values such as email service credentials if needed.
 
 ---
 
-## 📬 Contact
+## Contact
 
-- **Email**: amosjoel91@gmail.com  
-- **LinkedIn**: [linkedin.com/in/joeladero](https://linkedin.com/in/joeladero)  
+- **Email**: <amosjoel91@gmail.com>
+- **LinkedIn**: [linkedin.com/in/joeladero](https://linkedin.com/in/joeladero)
 - **GitHub**: [github.com/Murzuqisah](https://github.com/Murzuqisah)
 
 ---
 
-## 🪪 License
+## License
 
 This project is open-sourced under the MIT License.
