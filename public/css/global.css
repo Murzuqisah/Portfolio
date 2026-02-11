@@ -494,6 +494,7 @@ h1 {
 }
 
 .section-title {
+  color: #2c3549;
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 3rem;
@@ -537,8 +538,8 @@ h1 {
 }
 
 .project-description {
-  color: rgb(209, 213, 219);
-  margin-bottom: 1rem;
+    color: rgb(14, 16, 20);
+    margin-bottom: 1rem;
 }
 
 .project-link {
