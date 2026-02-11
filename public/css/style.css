@@ -246,3 +246,41 @@
         width: 100%;
     }
 }
+
+/* Section scroll indicators */
+.scroll-indicator {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-dot:hover {
+    background: var(--accent-green);
+    transform: scale(1.2);
+}
+
+.scroll-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+@media (max-width: 768px) {
+    .scroll-indicator {
+        right: 1rem;
+    }
+}

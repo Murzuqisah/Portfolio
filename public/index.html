@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=6">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png?v=6">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png?v=6">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png?v=6">
     <link rel="stylesheet" href="./css/global.css" type="text/css" />
     <link rel="stylesheet" href="./css/mobile-style.css" type="text/css" />
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
@@ -417,10 +420,20 @@
                 </div>
             </div>
         </footer>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-dot active" data-section="0" title="Home"></div>
+            <div class="scroll-dot" data-section="1" title="About"></div>
+            <div class="scroll-dot" data-section="2" title="Projects"></div>
+            <div class="scroll-dot" data-section="3" title="Contact"></div>
+        </div>
+        
         <script type="module" src="./JS/script.js"></script>
         <script type="module" src="./JS/index-time.js"></script>
         <script type="module" src="./JS/theme-toggle.js"></script>
         <script src="./JS/hero-carousel.js"></script>
+        <script src="./JS/section-scroll.js"></script>
         <script src="./JS/live-reload.js"></script>
 </body>
 
