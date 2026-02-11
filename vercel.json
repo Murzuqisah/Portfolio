@@ -11,11 +11,6 @@
         "dest": "/index.js"
       }
     ],
-    "functions": {
-        "index.js": {
-            "includeFiles": "public/**"
-        }
-    },
     "github": {
         "silent": true
     }
