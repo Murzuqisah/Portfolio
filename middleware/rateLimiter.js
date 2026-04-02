@@ -1,16 +1,21 @@
 // middleware/rateLimiter.js
 import rateLimit from 'express-rate-limit';
 
-export const rateLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 1000, // limit each IP to 1000 requests per windowMs
-    message: {
-        status: 'error',
-        message: 'Too many requests from this IP, please try again later.'
-    },
-    standardHeaders: true,
-    legacyHeaders: false,
-});
+// For serverless: use a simple pass-through limiter
+// In production, consider using external rate limiting service (e.g., Redis)
+export const rateLimiter = (req, res, next) => {
+    // Disable rate limiting in serverless environment
+    // Each function invocation is independent and in-memory storage is not shared
+    next();
+};
+
+// Optional: Basic rate limiting without memory (can be re-enabled with external store)
+// export const rateLimiter = rateLimit({
+//     store: new RedisStore(...),  // Requires Redis configuration
+//     windowMs: 15 * 60 * 1000,
+//     max: 1000,
+//     message: 'Too many requests from this IP'
+// });
 
 // middleware/cors.js
 export const corsMiddleware = (req, res, next) => {
