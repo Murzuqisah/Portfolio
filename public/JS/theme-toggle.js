@@ -1,33 +1,73 @@
-const themeToggle = document.querySelector('.theme-toggle');
-const root = document.documentElement;
+// Theme Manager - Handles dark/light mode switching
+class ThemeManager {
+  constructor() {
+    this.themeToggle = document.querySelector('.theme-toggle');
+    this.html = document.documentElement;
+    this.init();
+  }
 
-// Function to set the theme
-const setTheme = (theme) => {
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    // Update icon
-    if (theme === 'dark') {
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  init() {
+    // Set initial theme based on localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    this.setTheme(initialTheme);
+
+    // Add event listener to toggle button
+    if (this.themeToggle) {
+      this.themeToggle.addEventListener('click', () => this.toggleTheme());
     }
-};
 
-// Event listener for the toggle button
-themeToggle.addEventListener('click', () => {
-    const currentTheme = root.getAttribute('data-theme');
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        this.setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+
+  toggleTheme() {
+    const currentTheme = this.html.getAttribute('data-theme') || 'dark';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-});
+    this.setTheme(newTheme);
+  }
 
-// Initial theme setup
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(theme) {
+    // Set the data-theme attribute
+    this.html.setAttribute('data-theme', theme);
+    
+    // Save to localStorage
+    localStorage.setItem('theme', theme);
+    
+    // Update icon
+    if (this.themeToggle) {
+      const icon = this.themeToggle.querySelector('i');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      }
+    }
 
-if (savedTheme) {
-    setTheme(savedTheme);
-} else if (prefersDark) {
-    setTheme('dark');
+    // Update meta theme-color for mobile browsers
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0a0e27' : '#f9fafb');
+    }
+
+    // Dispatch custom event for other scripts to react to theme change
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+  }
+
+  getCurrentTheme() {
+    return this.html.getAttribute('data-theme') || 'dark';
+  }
+}
+
+// Initialize theme manager when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.themeManager = new ThemeManager();
+  });
 } else {
-    setTheme('light');
+  window.themeManager = new ThemeManager();
 }
