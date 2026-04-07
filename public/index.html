@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0e27" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico?v=6">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png?v=6">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png?v=6">
@@ -19,7 +20,11 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="./JS/cv-download.js"></script>
     <script src="./JS/contact-form.js"></script>
-    <title>Joel Amos Adero | Software Developer</title>
+    <meta name="description" content="Joel Amos Adero - Cybersecurity & Networks Engineer specializing in OSINT, network security, and fullstack development. Based in Kisumu, Kenya.">
+    <meta name="keywords" content="Cybersecurity, OSINT, Network Security, Fullstack Developer, Pentesting, Security Tools">
+    <meta property="og:title" content="Joel Amos Adero - Cybersecurity & Networks Engineer">
+    <meta property="og:description" content="Building secure systems and scalable applications with expertise in OSINT and modern web architecture.">
+    <title>Joel Amos Adero | Cybersecurity & Networks Engineer</title>
 </head>
 
 <body>
@@ -44,7 +49,7 @@
                     <span id="current-time">20:26:43</span>
                 </div>
                 <button class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -56,8 +61,9 @@
     </nav>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-wrapper">
                 <div class="carousel-container">
                     <div class="carousel-images">
                         <img src="./images/IMG_7022.JPG" alt="Joel Amos" class="carousel-image active">
@@ -73,296 +79,312 @@
                         <img src="./images/Adero_010.JPG" alt="Joel Amos" class="carousel-image">
                     </div>
                 </div>
-                <div class="hero-text">
-                    <h1>Joel Amos</h1>
-                    <p class="hero-subtitle">Software Developer</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#experience" class="btn btn-secondary">View My Work</a>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Joel Amos Adero</h1>
+                        <p class="hero-subtitle">Cybersecurity & Networks Engineer<span class="separator">|</span>Fullstack Developer</p>
+                        <p class="hero-description">
+                            Securing systems and building scalable applications. Specialized in OSINT, network security, and modern web architecture.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <!-- Expertise Section -->
+        <section id="expertise" class="expertise-section">
             <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    Joel is a full-stack software developer who's spent the last two years building modern,
-                    human-centered web applications. Coming from a strong foundation in IT hardware, software
-                    development, and systems security, he approaches problems with the mindset of someone who
-                    understands tech from the metal all the way to the user interface.
-                </p>
-                <p>
-                    He's worked on everything from AI-powered marketplaces and financial dashboards to education and
-                    accessibility platforms — often taking on both frontend and backend responsibilities. His go-to
-                    stack includes Go, JavaScript, PHP (Laravel), Inertia.js, TypeScript, and TailwindCSS, which he uses
-                    to craft reliable, scalable, and clean digital experiences.
-                </p>
-                <p>
-                    Joel currently builds as a freelancer, creating secure, real-world solutions while sharpening his
-                    expertise in cybersecurity and blockchain. He's especially invested in technologies that boost
-                    transparency, trust, and data protection — the stuff that keeps systems honest and users safe.
-                </p>
-                <p>
-                    At the end of the day, whether he's shipping clean code, tightening security, or picking up a new
-                    skill to level up, Joel is driven by one clear goal: <strong>build tech that actually
-                        matters.</strong>
-                </p>
-                <br><br>
-                <h2>Tech Stack</h2>
-                <ul class="skills-list">
-                    <li>
-                        <a href="https://devdocs.io/javascript/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.docker.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://go.dev/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://nodejs.org/en"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
-                    </li>
-                    <li><a href="https://www.php.net/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://web.dev/learn/css"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://git-scm.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://mariadb.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <a href="https://expressjs.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.rust-lang.org/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.mysql.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.typescriptlang.org/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.reactjs.org/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.nextjs.org/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.tailwindcss.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.laravel.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.django.com/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.mongodb.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.linux.org/"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.jquery.com"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.docker.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.gitlab.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.github.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.supabase.com/"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.vercel.com" class="href"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.postgresql.org/" class="href"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.postman.com" class="href"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.figma.com" class="href"></a>
-
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
-
-                    </li>
-                    <li>
-                        <a href="https://www.canva.com" class="href"></a>
-
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" />
-
-                    </li>
-                    <li>
-                        <a href="https://www.sqlite.com" class="href"></a>
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
-                    </li>
-                    <li>
-                        <a href="https://www.mysql.com" class="href"></a>
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
-                    </li>
-                </ul>
+                <h2 class="section-title">Core Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-card primary">
+                        <div class="expertise-header">
+                            <h3>Cybersecurity & Networks</h3>
+                            <span class="expertise-badge primary">Primary</span>
+                        </div>
+                        <div class="expertise-content">
+                            <ul class="expertise-list">
+                                <li>Open Source Intelligence (OSINT)</li>
+                                <li>Network Analysis & Protocols</li>
+                                <li>Vulnerability Assessment</li>
+                                <li>Threat Intelligence</li>
+                                <li>Security Tools Development</li>
+                                <li>System Hardening</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="expertise-card secondary">
+                        <div class="expertise-header">
+                            <h3>Fullstack Development</h3>
+                            <span class="expertise-badge secondary">Secondary</span>
+                        </div>
+                        <div class="expertise-content">
+                            <ul class="expertise-list">
+                                <li>Frontend: React, Next.js, TypeScript</li>
+                                <li>Backend: Go, Node.js, PHP/Laravel</li>
+                                <li>Databases: PostgreSQL, MongoDB</li>
+                                <li>DevOps & Deployment</li>
+                                <li>Web Architecture & Security</li>
+                                <li>API Design & Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="experience-section">
-            <div class="section-container">
-                <h2 class="section-title" style="color:color-mix(in hsl longer hue, #ff024f 56, #194aa5 13);">Projects
-                </h2>
-                <div class="projects-grid">
-                    <div class="project-card animate-fade-in" href="https://passafrika.xyz">
-                        <img src="./images/passa.png" alt="Passa - Secure Event Management System"
-                            class="project-image">
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications-section">
+            <div class="container">
+                <h2 class="section-title">Certifications & Training</h2>
+                <div class="certifications-grid">
+                    <div class="cert-card completed">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>GIAC GOSI</h3>
+                        <p class="cert-status">In Progress</p>
+                        <p class="cert-description">GIAC Certified OSINT Specialist - Advanced reconnaissance and intelligence gathering</p>
+                    </div>
+                    <div class="cert-card in-progress">
+                        <div class="cert-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>SANS SEC487</h3>
+                        <p class="cert-status">Preparing</p>
+                        <p class="cert-description">Open Source Intelligence (OSINT) Gathering & Analysis course</p>
+                    </div>
+                    <div class="cert-card planned">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>CEH</h3>
+                        <p class="cert-status">Planned</p>
+                        <p class="cert-description">Certified Ethical Hacker - Comprehensive ethical hacking certification</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>
+                        I'm Joel Amos, a Cybersecurity & Networks Engineer with expertise in fullstack development. My foundation in IT hardware, software development, and systems security gives me a unique perspective on building secure, efficient digital solutions.
+                    </p>
+                    <p>
+                        Currently focused on advancing my expertise in Open Source Intelligence (OSINT), network security, and threat analysis. I'm passionate about understanding how systems work at every level—from network protocols to user interfaces—to build and secure applications that matter.
+                    </p>
+                    <p>
+                        As a freelancer, I create secure, real-world solutions combining modern web development with security-first architecture. Whether securing infrastructure, developing APIs, or building full-stack applications, I'm driven by one clear goal: <strong>build technology that is both powerful and secure.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Tech Stack & Skills</h2>
+                <div class="skills-grid">
+                    <div class="skills-category">
+                        <h3>Security & Networking</h3>
+                        <ul class="skills-list">
+                            <li><a href="https://www.linux.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" title="Linux"></a></li>
+                            <li><a href="https://www.python.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" title="Python"></a></li>
+                            <li><a href="https://www.docker.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" title="Docker"></a></li>
+                            <li><a href="https://git-scm.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git"></a></li>
+                            <li><a href="https://www.wireshark.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cmake/cmake-original.svg" alt="Network Analysis" title="Network Tools"></a></li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Fullstack Development</h3>
+                        <ul class="skills-list">
+                            <li><a href="https://devdocs.io/javascript/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript"></a></li>
+                            <li><a href="https://www.typescriptlang.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript"></a></li>
+                            <li><a href="https://go.dev/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go" title="Go"></a></li>
+                            <li><a href="https://www.php.net/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" title="PHP"></a></li>
+                            <li><a href="https://www.rust-lang.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" alt="Rust" title="Rust"></a></li>
+                            <li><a href="https://nodejs.org/en"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js"></a></li>
+                            <li><a href="https://www.reactjs.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" title="React"></a></li>
+                            <li><a href="https://www.nextjs.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" title="Next.js"></a></li>
+                            <li><a href="https://expressjs.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express" title="Express"></a></li>
+                            <li><a href="https://www.laravel.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" title="Laravel"></a></li>
+                            <li><a href="https://www.tailwindcss.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" title="Tailwind CSS"></a></li>
+                            <li><a href="https://www.postgresql.org/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL"></a></li>
+                            <li><a href="https://www.mongodb.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" title="MongoDB"></a></li>
+                            <li><a href="https://www.supabase.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" title="Supabase"></a></li>
+                            <li><a href="https://www.vercel.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel" title="Vercel"></a></li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Tools & Infrastructure</h3>
+                        <ul class="skills-list">
+                            <li><a href="https://www.postman.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" title="Postman"></a></li>
+                            <li><a href="https://www.github.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" title="GitHub"></a></li>
+                            <li><a href="https://www.gitlab.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" title="GitLab"></a></li>
+                            <li><a href="https://www.figma.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" title="Figma"></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" title="HTML5"></a></li>
+                            <li><a href="https://web.dev/learn/css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" title="CSS3"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <!-- Project Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                    <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+                    <button class="filter-btn" data-filter="tools">Tools & Utilities</button>
+                </div>
+
+                <div class="projects-grid" id="projects-container">
+                    <!-- OSINT-Guide (Security) -->
+                    <div class="project-card" data-category="security">
+                        <div class="project-badge">Security</div>
+                        <img src="./images/passa.png" alt="OSINT-Guide" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">OSINT-Guide</h3>
+                            <p class="project-description">Comprehensive Open Source Intelligence gathering and reconnaissance techniques</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/Murzuqisah/OSINT-Guide" class="btn btn-secondary" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passa (Fullstack Security) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
+                        <img src="./images/passa.png" alt="Passa" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">Passa</h3>
-                            <p class="project-description">A Secure Event
-                                Management System</p>
+                            <p class="project-description">Secure Event Management System with encrypted data handling</p>
                             <div class="project-buttons">
                                 <a href="https://passafrika.xyz" class="btn btn-primary" target="_blank">View Site</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in" href="https://testpassa-nu.vercel.app">
+
+                    <!-- PassaPay (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
                         <img src="./images/passapay.png" alt="PassaPay" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">PassaPay</h3>
-                            <p class="project-description">An artist payment
-                                platform powered by Polkadot</p>
+                            <p class="project-description">Artist payment platform powered by Polkadot blockchain</p>
                             <div class="project-buttons">
-                                <a href="https://testpassa-nu.vercel.app" class="btn btn-primary" target="_blank">View
-                                    Site</a>
+                                <a href="https://testpassa-nu.vercel.app" class="btn btn-primary" target="_blank">View Site</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in" href="https://getsippar.com">
+
+                    <!-- Sippar (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
                         <img src="./images/sippar.png" alt="Sippar" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">Sippar</h3>
-                            <p class="project-description">An ERP management
-                                platform</p>
+                            <p class="project-description">Enterprise ERP management platform for business operations</p>
                             <div class="project-buttons">
                                 <a href="https://getsippar.com" class="btn btn-primary" target="_blank">View Site</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in" href="https://chichwa.ke/">
-                        <img src="./images/chichwa.png" alt="Digital Agricultural Management Platform"
-                            class="project-image">
+
+                    <!-- Chichwa (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
+                        <img src="./images/chichwa.png" alt="Chichwa" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">Chichwa</h3>
-                            <p class="project-description">A digital agricultural management platform & marketplace</p>
+                            <p class="project-description">Digital agricultural platform connecting farmers and buyers</p>
                             <div class="project-buttons">
-                                <a href="https://chichwa.ke/" class="btn btn-primary"
-                                    target="_blank">View Site</a>
+                                <a href="https://chichwa.ke/" class="btn btn-primary" target="_blank">View Site</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/Mwalimu_Connect_Homepage.png" alt="Peer connect educational platform"
-                            class="project-image">
+
+                    <!-- Mwalimu Connect (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
+                        <img src="./images/Mwalimu_Connect_Homepage.png" alt="Mwalimu Connect" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">Mwalimu Connect</h3>
-                            <p class="project-description">A Blockchain
-                                Tutoring Hub written in Go</p>
+                            <p class="project-description">Blockchain-based tutoring hub for peer-to-peer education</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/Murzuqisah/MwalimuConnect.git" class="btn btn-secondary"
-                                    target="_blank">View Project</a>
-                                <a href="https://mwalimu-connect.vercel.app/" class="btn btn-primary"
-                                    target="_blank">View Live</a>
+                                <a href="https://github.com/Murzuqisah/MwalimuConnect.git" class="btn btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://mwalimu-connect.vercel.app/" class="btn btn-primary" target="_blank">Live Demo</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in">
-                        <img src="./images/Kisumu_In_Action.png" alt="Kisumu Interpreter" class="project-image">
+
+                    <!-- Kisumu Language (Tools) -->
+                    <div class="project-card" data-category="tools">
+                        <div class="project-badge">Tools</div>
+                        <img src="./images/Kisumu_In_Action.png" alt="Kisumu" class="project-image">
                         <div class="project-content">
-                            <h3 class="project-title">Kisumu | An
-                                Interpreted Language</h3>
-                            <p class="project-description">An interpreter
-                                based off Go Language</p>
+                            <h3 class="project-title">Kisumu | Interpreter Language</h3>
+                            <p class="project-description">Custom interpreted programming language built with Go</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/Murzuqisah/Kisumu.git" class="btn btn-secondary"
-                                    target="_blank">View Project</a>
+                                <a href="https://github.com/Murzuqisah/Kisumu.git" class="btn btn-secondary" target="_blank">View Project</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card animate-fade-in">
+
+                    <!-- Arnova (Fullstack/AI) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
                         <img src="./images/Arnova.png" alt="Arnova" class="project-image">
                         <div class="project-content">
                             <h3 class="project-title">Arnova</h3>
-                            <p class="project-description">AI-powered platform</p>
+                            <p class="project-description">AI-powered platform for intelligent automation</p>
                             <div class="project-buttons">
-                                <a href="https://github.com/shopify-kenya/Arnova.git" class="btn btn-secondary"
-                                    target="_blank">View Project</a>
-                                <a href="https://arnova.vercel.app" class="btn btn-primary" target="_blank">View
-                                    Live</a>
+                                <a href="https://github.com/shopify-kenya/Arnova.git" class="btn btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://arnova.vercel.app" class="btn btn-primary" target="_blank">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- neon-snake (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
+                        <img src="./images/passa.png" alt="Neon Snake" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Neon Snake - Beats</h3>
+                            <p class="project-description">Interactive game combining music and gameplay mechanics</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/Murzuqisah/neon-snake---beats" class="btn btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://neon-snake-beats.vercel.app" class="btn btn-primary" target="_blank">Play Game</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SRCA (Fullstack) -->
+                    <div class="project-card" data-category="fullstack">
+                        <div class="project-badge">Fullstack</div>
+                        <img src="./images/sippar.png" alt="SRCA" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">SRCA - Smart Rural Connectivity</h3>
+                            <p class="project-description">AI-powered connectivity mapping and optimization for rural African communities</p>
+                            <div class="project-buttons">
+                                <a href="https://github.com/Murzuqisah/srca" class="btn btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://v0-connectivity-mapping-system.vercel.app" class="btn btn-primary" target="_blank">Live Demo</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -399,6 +421,9 @@
                 <div class="copyright">
                     Joel Amos © <span id="current-year"></span>
                 </div>
+                <div class="footer-links">
+                    <a href="./gallery.html">Gallery</a>
+                </div>
                 <div class="social-links">
                     <a href="https://github.com/Murzuqisah" class="social-link" aria-label="GitHub">
                         <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
@@ -434,6 +459,7 @@
         <script type="module" src="./JS/theme-toggle.js"></script>
         <script src="./JS/hero-carousel.js"></script>
         <script src="./JS/section-scroll.js"></script>
+        <script src="./JS/project-filter.js"></script>
         <script src="./JS/live-reload.js"></script>
 </body>
 
